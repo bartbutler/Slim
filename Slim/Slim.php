@@ -1370,7 +1370,7 @@ class Slim
             $this->stop();
         } catch (\Slim\Exception\Stop $e) {
             $this->response()->write(ob_get_clean());
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             if ($this->config('debug')) {
                 ob_end_clean();
                 throw $e;
