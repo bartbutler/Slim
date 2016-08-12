@@ -396,9 +396,9 @@ class Route
         foreach ($this->paramNames as $name) {
             if (isset($paramValues[$name])) {
                 if (isset($this->paramNamesPath[$name])) {
-                    $this->params[$name] = explode('/', mb_convert_encoding(urldecode($paramValues[$name]), 'UTF-8', 'UTF-8'));
+                    $this->params[$name] = explode('/', urldecode($paramValues[$name]));
                 } else {
-                    $this->params[$name] = mb_convert_encoding(urldecode($paramValues[$name]), 'UTF-8', 'UTF-8');
+                    $this->params[$name] = urldecode($paramValues[$name]);
                 }
             }
         }
